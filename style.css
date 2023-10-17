@@ -1,0 +1,218 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(180deg, #B068E9 0%, #6463E7 100%);
+}
+
+/* Font resposive section */
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+/* Font responsive section */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 0.09px;
+    background-color: hsla(0, 0%, 100%, 1);
+    box-shadow: 0px 50px 50px -20px rgba(53.33, 17.63, 121.91, 0.50);
+    border-radius: 23px;
+    margin: 9.25rem 1.5rem auto;
+    padding: 0 1.5rem 1.9rem;
+}
+
+.main-hero {
+    width: 100%;
+    height: 13.25rem;
+    background-image: url(./images/illustration-woman-online-mobile.svg), url(./images/bg-pattern-mobile.svg);
+    background-size: 237px 180px, auto;
+    background-position: top, bottom;
+    background-repeat: no-repeat, no-repeat;
+    margin-top: -6.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 17.4375rem;
+    max-width: 100%;
+}
+
+.header-main {
+    color: hsla(238, 29%, 17%, 1);
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+
+/* Question section */
+
+.question-section {
+    position: relative;
+    border-bottom: 1px solid hsla(240, 5%, 91%, 1);
+    margin-bottom: 0.9625rem;
+}
+
+.question-section[aria-expanded='true'] {
+    padding-bottom: 1rem;
+}
+
+
+.question-title {
+    color: hsla(237, 12%, 33%, 1);
+    margin-bottom: 1.1875rem;
+    cursor: pointer;
+}
+
+.question-section[aria-expanded='true'] .question-title {
+    font-weight: 700;
+    margin-bottom: 0.8125rem;
+}
+
+.question-title:hover {
+    color: hsla(14, 88%, 65%, 1);
+}
+
+.question-title::after {
+    content: url(./images/icon-arrow-down.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+    transition: transform 150ms ease-out;
+}
+
+.question-section[aria-expanded='true'] .question-title::after {
+    transform: rotate(180deg);
+}
+
+
+.question-answer {
+    color: hsla(240, 6%, 50%, 1);
+    opacity: 0;
+    max-width: 15.2rem;
+    max-height: 0;
+    transition: opacity 200ms linear, max-height 200ms;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.question-section[aria-expanded='true'] .question-answer {
+    opacity: 1;
+    max-height: 4.5rem;
+    transition: all 200ms linear;
+}
+
+/* Question section */
+
+/* Footer section */
+
+footer {
+    width: 100%;
+    background-color: hsla(0, 0%, 100%, 1);
+    text-align: center;
+}
+
+/* Footer section */
+
+/* Desktop responsive section */
+
+@media (min-width: 1200px) {
+    /* Font resposive section */
+
+    h2 {
+        font-size: 0.875rem;
+    }
+
+    /* Font responsive section */
+
+    body {
+        /* display: block; */
+        align-items: center;
+    }
+
+    main {
+        flex-direction: row;
+        min-width: 57.5rem;
+        margin: 8.0625rem 14.9375rem 8.0625rem 17.5625rem;
+        padding: 0 5.9375rem 0 0;
+    }
+
+    .main-hero {
+        position: relative;
+        max-width: 24.25rem;
+        height: 31.8125rem;
+        background-image: url(./images/illustration-woman-online-desktop.svg), url(./images/bg-pattern-desktop.svg);
+        background-size: auto;
+        background-position: top 4.4256rem left -5.24125rem, bottom -8.8125rem left -36rem;
+        margin-inline-end: 5.4475rem;
+        margin-block: 0;
+    }
+
+    .main-hero::after {
+        content: url(./images/illustration-box-desktop.svg);
+        position: absolute;
+        top: 12.8825rem;
+        left: -5.8168rem;
+    }
+
+    .main-content {
+        width: 21.875rem;
+        max-width: 100%;
+        height: 31.8125rem;
+        padding-block: 4.0625rem 5.1875rem;
+    }
+
+    .header-main {
+        text-align: left;
+        margin-bottom: 2.1875rem;
+    }
+
+    .question-section {
+        margin-bottom: 0.7625rem;
+    }
+
+    .question-section[aria-expanded='true'] {
+        margin-bottom: 0.7125rem;
+    }
+
+    .question-title::after {
+        right: 1rem;
+    }
+}
